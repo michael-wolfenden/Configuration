@@ -1,0 +1,33 @@
+[user]
+	email = michael.wolfenden@gmail.com
+	name = Michael Wolfenden
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+[diff]
+	tool = p4merge
+	guitool = p4merge
+[merge]
+	tool = p4merge
+[difftool "p4merge"]
+	cmd = p4merge.exe $LOCAL $REMOTE
+	prompt = false
+[mergetool "p4merge"]
+	cmd = p4merge $BASE $LOCAL $REMOTE $MERGED
+	trustExitCode = true
+	keepBackup = false
+[core]
+	editor = 'C:/Program Files/Sublime Text 3/sublime_text.exe' -w
+	autocrlf = true
+[credential]
+	helper = !'C:\\Users\\michael-wolfenden\\AppData\\Roaming\\GitCredStore\\git-credential-winstore.exe'
+[alias]
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	cm = !git add -A && git commit -m
+	ec = config --global -e
+	cob = checkout -b
+	pl = !git pull --rebase --prune $@ && git submodule update --init --recursive
+  ps = push origin master
+	st = status
+  nuke = !git reset --hard && git clean -df
