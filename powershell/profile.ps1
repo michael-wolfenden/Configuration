@@ -5,6 +5,7 @@ $env:PSModulePath = $myModulePath + ";" + $env:PSModulePath
 
 # Load in support modules
 Import-Module "Posh-Git"
+Import-Module "Posh-VsVars"
 
 $env:TERM = "msys"
 $env:CHROME_BIN = "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe"
@@ -22,6 +23,10 @@ set-alias sudo Invoke-Elevated
 set-alias subl 'C:\Program Files\Sublime Text 3\sublime_text.exe'
 
 # Functions
+function clean {
+	gci -inc bin,obj -rec | rm -rec -force
+}
+
 function add-path {
   [CmdletBinding()]
   param (
@@ -57,5 +62,6 @@ function add-path {
 add-path -Directory "C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE"
 add-path -Directory "C:\Program Files (x86)\Git\bin"
 add-path -Directory "C:\Users\michael-wolfenden\AppData\Roaming\npm"
-add-path -Directory "C:\Program Files\nodejs"
+add-path -Directory "C:\Program Files (x86)\nodejs"
 add-path -Directory "C:\utils\"
+add-path -Directory "C:\Program Files\Haskell Platform\2014.2.0.0\bin"

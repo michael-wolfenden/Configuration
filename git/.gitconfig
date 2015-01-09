@@ -19,15 +19,22 @@
 	keepBackup = false
 [core]
 	editor = 'C:/Program Files/Sublime Text 3/sublime_text.exe' -w
-	autocrlf = true
+	autocrlf = True
 [credential]
 	helper = !'C:\\Users\\michael-wolfenden\\AppData\\Roaming\\GitCredStore\\git-credential-winstore.exe'
 [alias]
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	undo = reset --soft HEAD~1
 	cm = !git add -A && git commit -m
 	ec = config --global -e
 	cob = checkout -b
 	pl = !git pull --rebase --prune $@ && git submodule update --init --recursive
-  ps = push origin master
+	ps = push origin master
 	st = status
-  nuke = !git reset --hard && git clean -df
+	nuke = !git reset --hard && git clean -df
+[gui]
+	recentrepo = C:/projects/parent-portal/source/ParentPortal
+[push]
+	default = matching
+[url "https://"]
+	insteadOf = git://

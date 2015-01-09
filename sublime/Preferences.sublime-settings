@@ -1,0 +1,25 @@
+{
+	"auto_complete_triggers":
+	[
+		{
+			"characters": "ng-controller=\"*",
+			"selector": "punctuation.definition.string"
+		}
+	],
+	"color_scheme": "Packages/User/Base16 Railscasts Dark (SL).tmTheme",
+	"draw_white_space": "all",
+	"font_size": 10,
+	"hot_exit": false,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"remember_open_files": false,
+	"rulers":
+	[
+		120
+	],
+	"translate_tabs_to_spaces": true,
+	"trim_trailing_white_space_on_save": false,
+	"word_wrap": "false"
+}
