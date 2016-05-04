@@ -32,8 +32,6 @@
 	ps = push origin master
 	st = status
 	nuke = !git reset --hard && git clean -df
-[gui]
-	recentrepo = C:/projects/parent-portal/source/ParentPortal
 [push]
 	default = matching
 [url "https://"]
