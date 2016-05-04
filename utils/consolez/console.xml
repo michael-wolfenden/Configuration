@@ -21,7 +21,7 @@
 		</colors>
 		<cursor style="0" r="255" g="255" b="255"/><background type="0" r="0" g="0" b="0"><image file="" relative="0" extend="0" position="0"><tint opacity="0" r="0" g="0" b="0"/></image></background></console>
 	<appearance>
-		<font name="Consolas" size="11" bold="0" italic="0" smoothing="2" bold_intensified="0" italic_intensified="0" extra_width="0" ligature="0">
+		<font name="Fira Code" size="10" bold="0" italic="0" smoothing="2" bold_intensified="0" italic_intensified="0" extra_width="0" ligature="1">
 			<color use="0" r="0" g="0" b="0"/>
 		</font>
 		<window title="Console" icon="" use_tab_icon="1" use_console_title="0" show_cmd="1" show_cmd_tabs="1" use_tab_title="1" trim_tab_titles="20" trim_tab_titles_right="0" main_title_format="?U([%u] )?N({%u} )%m?s( - %s)" tab_title_format="%n. ?U([%u] )?N({%u} )%t?s( - %s)"/>
@@ -29,7 +29,7 @@
 		<styles caption="1" resizable="1" taskbar_button="1" border="1" inside_border="2" tray_icon="1" quake_like="0" jumplist="0" integrated_ime="0" quake_animation_time="300" hide_when_inactive="0" per_monitor_dpi="0">
 			<selection_color r="255" g="255" b="255"/>
 		</styles>
-		<position x="-1" y="-1" dock="4" snap="0" z_order="0" save_position="0" w="-1" h="-1" save_size="0"/>
+		<position x="-1" y="-1" dock="4" snap="-1" z_order="0" save_position="0" w="-1" h="-1" save_size="0"/>
 		<transparency type="1" active_alpha="245" inactive_alpha="255" r="0" g="0" b="0"/>
 		<fullscreen start_in_fullscreen="0" fullscreen_monitor="0"><controls show_menu="1" show_toolbar="1" show_searchbar="1" show_statusbar="1" show_tabs="1" hide_single_tab="1" tabs_on_bottom="0" hide_tab_icons="0" show_scrollbars="1"/></fullscreen>
 	</appearance>
@@ -167,7 +167,7 @@
 	</mouse>
 	<tabs>
 		<tab title="Console2" use_default_icon="0">
-			<console shell="%SystemRoot%\syswow64\WindowsPowerShell\v1.0\powershell.exe" init_dir="" priority="2" run_as_user="0" user="" net_only="0" run_as_admin="0"/>
+			<console shell="ansicon.exe %SystemRoot%\syswow64\WindowsPowerShell\v1.0\powershell.exe" init_dir="" priority="2" run_as_user="0" user="" net_only="0" run_as_admin="0"/>
 			<cursor style="4" r="255" g="255" b="255"/>
 			<background type="0" r="0" g="43" b="54">
 				<image file="" relative="0" extend="0" position="0">
