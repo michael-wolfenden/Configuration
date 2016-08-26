@@ -1,20 +1,3 @@
-# function Prompt
-# {
-#     # # Check for Administrator elevation
-#     # $identity = [System.Security.Principal.WindowsIdentity]::GetCurrent()
-#     # $principle = New-Object System.Security.Principal.WindowsPrincipal($identity)
-#     # $administratorRole = [System.Security.Principal.WindowsBuiltInRole]::Administrator
-#     # $isAdministrator = $principle.IsInRole($administratorRole)
-
-#     # Set Window Title
-#     $host.UI.RawUI.WindowTitle = "$ENV:USERNAME@$ENV:COMPUTERNAME - $(Get-Location)"
-    
-#     Write-Host "[$ENV:USERNAME@$ENV:COMPUTERNAME]" -NoNewline -ForegroundColor Yellow
-#     Write-Host " :: " -NoNewline -ForegroundColor DarkGray
-#     Write-Host $(Get-Location) -ForegroundColor Green
-#     Write-Host "$(Write-VcsStatus)>=" -NoNewline -ForegroundColor Gray
-#     return " "
-# }
 function Test-Administrator {
     $user = [Security.Principal.WindowsIdentity]::GetCurrent();
     (New-Object Security.Principal.WindowsPrincipal $user).IsInRole([Security.Principal.WindowsBuiltinRole]::Administrator)
@@ -42,7 +25,7 @@ function prompt {
     }
 
     Write-Host " : " -NoNewline -ForegroundColor DarkGray
-    Write-Host $($(Get-Location) -replace "C:\\Users\\MWolfend", "~") -NoNewline -ForegroundColor Blue
+    Write-Host $($(Get-Location) -replace $($env:USERPROFILE -Replace "\\", "\\"), "~") -NoNewline -ForegroundColor Blue
     Write-Host " : " -NoNewline -ForegroundColor DarkGray
     Write-Host (Get-Date -Format G) -NoNewline -ForegroundColor DarkMagenta
     Write-Host " : " -NoNewline -ForegroundColor DarkGray
