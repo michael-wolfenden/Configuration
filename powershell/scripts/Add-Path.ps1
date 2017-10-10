@@ -4,9 +4,9 @@ function Add-Path
     .SYNOPSIS
         Adds a Directory to the Current Path
     .DESCRIPTION
-        Add a directory to the current path.  This is useful for 
-        temporary changes to the path or, when run from your 
-        profile, for adjusting the path within your powershell 
+        Add a directory to the current path.  This is useful for
+        temporary changes to the path or, when run from your
+        profile, for adjusting the path within your powershell
         prompt.
     .EXAMPLE
         Add-Path -Directory "C:\Program Files\Notepad++"

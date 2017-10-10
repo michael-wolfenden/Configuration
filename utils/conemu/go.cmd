@@ -1,0 +1,1 @@
+ConEmu.exe -runlist cmd -cur_console:fn ||| cmd -cur_console:s1TVn ||| cmd -cur_console:s1THn ||| cmd -cur_console:s2THn
