@@ -1,38 +1,36 @@
-[user]
-	email = michael.wolfenden@gmail.com
-	name = Michael Wolfenden
-[color]
-	diff = auto
-	status = auto
-	branch = auto
-[diff]
-	tool = p4merge
-	guitool = p4merge
 [merge]
-	tool = p4merge
-[difftool "p4merge"]
-	cmd = p4merge.exe $LOCAL $REMOTE
-	prompt = false
-[mergetool "p4merge"]
-	cmd = p4merge $BASE $LOCAL $REMOTE $MERGED
-	trustExitCode = true
-	keepBackup = false
+    tool = p4merge
+[diff]
+    guitool = p4merge
 [core]
-	editor = 'C:/Program Files/Sublime Text 3/sublime_text.exe' -w
-	autocrlf = True
-[credential]
-	helper = !'C:\\Users\\michael-wolfenden\\AppData\\Roaming\\GitCredStore\\git-credential-winstore.exe'
+    editor = code --wait
+    autocrlf = true
+[user]
+    name = Michael Wolfenden
+    email = EMAIL_HERE
+[mergetool "p4merge"]
+    cmd = \"C:/Program Files/Perforce/p4merge.exe\" \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
+    path = C:/Program Files/Perforce/p4merge.exe
+[difftool "p4merge"]
+    path = C:/Program Files/Perforce/p4merge.exe
+    cmd = \"C:/Program Files/Perforce/p4merge.exe\" \"$LOCAL\" \"$REMOTE\"
+[i18n]
+    filesEncoding = utf-8
 [alias]
-	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-	undo = reset --soft HEAD~1
-	cm = !git add -A && git commit -m
-	ec = config --global -e
-	cob = checkout -b
-	pl = !git pull --rebase --prune $@ && git submodule update --init --recursive
-	ps = push origin master
-	st = status
-	nuke = !git reset --hard && git clean -df
-[push]
-	default = matching
-[url "https://"]
-	insteadOf = git://
+    pm = push origin master
+    ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+    co = checkout
+    ec = config --global -e
+    up = !git pull --rebase --prune $@ && git submodule update --init --recursive
+    cob = checkout -b
+    cm = !git add -A && git commit -m
+    save = !git add -A && git commit -m 'SAVEPOINT'
+    wip = !git add -u && git commit -mWIP
+    undo = reset HEAD~1 --mixed
+    amend = commit -a --amend
+    wipe = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
+    bclean = "!f() { git branch --merged ${1-master} | grep -v ${1-master}$ | xargs -r git branch -d; }; f"
+    bdone = "!f() { git checkout ${1-master} && git up && git bclean ${1-master}; }; f"
+    open = !explorer `git config remote.origin.url`
+    browse = !git open
+    alias = config --get-regexp ^alias\\.
