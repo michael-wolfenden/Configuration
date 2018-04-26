@@ -13,7 +13,9 @@ Get-ChildItem "${scriptsDir}\*.ps1" | %{.$_}
 
 # add paths
 Add-Path -Directory "D:\utils\asmspy"
+Add-Path -Directory "D:\utils\openssl"
 Add-Path -Directory "D:\utils\ripgrep"
+Add-Path -Directory "D:\utils\graphviz"
 Add-Path -Directory "C:\Program Files (x86)\GitExtensions"
 
 # load ripgrep module
